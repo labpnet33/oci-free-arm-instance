@@ -64,6 +64,10 @@ jobs:
             --display-name "coolify-vm" \
             --boot-volume-size-in-gbs 200 2>&1 || true)
 
+          echo "========== OCI RESPONSE =========="
+          echo "$OCI_OUTPUT"
+          echo "=================================="
+
           # Store the log as a GitHub step output
           echo "log_data<<EOF" >> $GITHUB_OUTPUT
           echo "$OCI_OUTPUT" >> $GITHUB_OUTPUT
